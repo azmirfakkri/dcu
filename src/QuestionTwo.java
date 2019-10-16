@@ -21,20 +21,30 @@ public class QuestionTwo {
 
         // ask for 1st number
         System.out.print("Please enter the 1st index: ");
+        int num1;
 
-
-        int num1 = sc.nextInt();
-
-
-        // add catch exception
+        while ((num1 = sc.nextInt()) > str_len)
+        {
+            System.out.println("Index is out of range, please try again");
+            System.out.print("Please enter the 1st index: ");
+        }
 
         // ask for 2nd number
         System.out.print("Please enter the 2nd index: ");
-        int num2 = sc.nextInt();
+        int num2;
+
+        while ((num2 = sc.nextInt()) > str_len)
+        {
+            System.out.println("Index is out of range, please try again");
+            System.out.print("Please enter the 2nd index: ");
+        }
+
         int num3 = num2 + 1;
 
         // print out the letter based on the number provided
         System.out.print("The substring from index " + num1 + " to index " + num2 + " is: ");
         System.out.println(word.substring(num1, num3));
+
+
     }
 }
