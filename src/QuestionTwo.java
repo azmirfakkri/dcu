@@ -18,33 +18,35 @@ public class QuestionTwo {
 
         // get length of the string
         int str_len = word.length();
-
-        // ask for 1st number
-        System.out.print("Please enter the 1st index: ");
         int num1;
-
-        while ((num1 = sc.nextInt()) > str_len)
-        {
-            System.out.println("Index is out of range, please try again");
-            System.out.print("Please enter the 1st index: ");
-        }
-
-        // ask for 2nd number
-        System.out.print("Please enter the 2nd index: ");
         int num2;
+        int maxEndIndex = str_len - 1;
 
-        while ((num2 = sc.nextInt()) > str_len)
-        {
-            System.out.println("Index is out of range, please try again");
-            System.out.print("Please enter the 2nd index: ");
-        }
+        do {
+            // ask for start index
+            System.out.print("Please enter the start index: ");
+            num1 = sc.nextInt();
+
+            if (num1 < 0 || num1 > maxEndIndex) {
+                System.out.println("Index is out of range, please try again");
+            }
+        } while (num1 < 0 || num1 > maxEndIndex);
+
+        do {
+            // ask for end index
+            System.out.print("Please enter the end index: ");
+            num2 = sc.nextInt();
+
+            if (num2 < num1 || num2 > maxEndIndex) {
+                System.out.println("Index is out of range, please try again");
+            }
+        } while (num2 < num1 || num2 > maxEndIndex);
 
         int num3 = num2 + 1;
 
         // print out the letter based on the number provided
         System.out.print("The substring from index " + num1 + " to index " + num2 + " is: ");
         System.out.println(word.substring(num1, num3));
-
 
     }
 }
