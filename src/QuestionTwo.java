@@ -20,6 +20,7 @@ public class QuestionTwo {
         int str_len = word.length();
         int num1;
         int num2;
+        // Index starts at 0
         int maxEndIndex = str_len - 1;
 
         do {
@@ -37,7 +38,9 @@ public class QuestionTwo {
             System.out.print("Please enter the end index: ");
             num2 = sc.nextInt();
 
-            if (num2 < num1 || num2 > maxEndIndex) {
+            if (num2 < num1) {
+                System.out.println("End index can't be smaller than start index, please try again");
+            } else if (num2 > maxEndIndex) {
                 System.out.println("Index is out of range, please try again");
             }
         } while (num2 < num1 || num2 > maxEndIndex);
