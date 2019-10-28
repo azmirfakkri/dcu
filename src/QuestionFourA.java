@@ -1,53 +1,52 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class QuestionFourA {
 
     public static void main(String[] args) {
+        // String arrayList to store answers from everyone (arrayList of arrays)
+        ArrayList<String[]> listOfAnswersFromEveryone = new ArrayList<>();
 
         for (int index = 1; index < 5; index++) {
             String[] persons = surveyQuestions(index);
-            System.out.println(Arrays.toString(persons));
+            listOfAnswersFromEveryone.add(persons);
         }
+        // printing arrays in arrayList
+        System.out.println(Arrays.deepToString(listOfAnswersFromEveryone.toArray()));
+
+        // calculate the percentage - another method
+        System.out.println(Arrays.toString(listOfAnswersFromEveryone.get(0)));
     }
 
     private static String[] surveyQuestions(int person) {
 
         Scanner sc = new Scanner(System.in);
-        String answer1;
-        String answer2;
-        String answer3;
+        String answer;
 
         System.out.println("Person " + person);
 
-        //TODO need to create a loop to avoid repetition
-        do {
-            System.out.print("Do you play football?: ");
-            answer1 = sc.next();
+        // array of questions (String)
+        String[] questions = new String[]{"Do you play football?: ", "Do you swim?: ", "Do you watch movies?: "};
+        // String array to store answers from survey questions
+        String[] answers = new String[3];
 
-            if (!answer1.equals("yes") && !answer1.equals("no")) {
-                System.out.println("Answer can only be yes or no, please try again");
-            }
-        } while (!answer1.equals("yes") && !answer1.equals("no"));
+        for (int q = 0; q < questions.length; q++) {
+            do {
+                System.out.print(questions[q]);
+                answer = sc.next();
 
-        do {
-            System.out.print("Do you swim?: ");
-            answer2 = sc.next();
+                if (!answer.equals("yes") && !answer.equals("no")) {
+                    System.out.println("Answer can only be yes or no, please try again");
+                }
+            } while (!answer.equals("yes") && !answer.equals("no"));
 
-            if (!answer2.equals("yes") && !answer2.equals("no")) {
-                System.out.println("Answer can only be yes or no, please try again");
-            }
-        } while (!answer2.equals("yes") && !answer2.equals("no"));
+            // add every answer into answers array
+            answers[q] = answer;
 
-        do {
-            System.out.print("Do you watch movies?: ");
-            answer3 = sc.next();
+        }
 
-            if (!answer3.equals("yes") && !answer3.equals("no")) {
-                System.out.println("Answer can only be yes or no, please try again");
-            }
-        } while (!answer3.equals("yes") && !answer3.equals("no"));
-
-        return new String[]{answer1, answer2, answer3};
+        return answers;
     }
+
 }

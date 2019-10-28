@@ -5,7 +5,7 @@ import java.util.Scanner;
  * It will give a substring based on the index specified by the 2 numbers
  */
 
-public class QuestionTwo {
+public class c2a1q2_2019_AzmirFakkri {
 
     public static void main(String[] args) {
 

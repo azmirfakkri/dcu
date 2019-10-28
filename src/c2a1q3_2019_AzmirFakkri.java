@@ -7,7 +7,7 @@ import java.util.Scanner;
  *
  */
 
-public class QuestionThree {
+public class c2a1q3_2019_AzmirFakkri {
 
     public static void main(String[] args) {
 
@@ -54,7 +54,7 @@ public class QuestionThree {
         System.out.println("The result is: " + totalString);
 
 //        charArray = str.split("(?!^)");
-//        System.out.println(Arrays.toString(charArray));
+//        System.out.println(Arrays.toString(charArray));  // this will return a String representation of the array
 
 //        System.out.print(letters.indexOf('z'));
     }

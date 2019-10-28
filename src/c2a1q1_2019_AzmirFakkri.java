@@ -5,7 +5,7 @@ import java.util.Scanner;
  * the sentence in reverse
  */
 
-public class QuestionOne {
+public class c2a1q1_2019_AzmirFakkri {
 
     public static void main(String[] args) {
 
