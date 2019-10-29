@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class QuestionFourA {
+public class c2a1q4_2019_AzmirFakkri {
 
     public static void main(String[] args) {
         // String arrayList to store answers from everyone (arrayList of arrays)
@@ -12,43 +12,23 @@ public class QuestionFourA {
             String[] persons = surveyQuestions(index);
             listOfAnswersFromEveryone.add(persons);
         }
-        // printing arrays in arrayList
-        System.out.println(Arrays.deepToString(listOfAnswersFromEveryone.toArray()));
 
-        // sort these answers into 3 arrays of 4 answers - another method
+        // sort these answers into 3 arrays of 4 answers
         String[] question1 = new String[4];
         String[] question2 = new String[4];
         String[] question3 = new String[4];
 
-        question1[0] = listOfAnswersFromEveryone.get(0)[0];
-        question2[0] = listOfAnswersFromEveryone.get(0)[1];
-        question3[0] = listOfAnswersFromEveryone.get(0)[2];
-
-        question1[1] = listOfAnswersFromEveryone.get(1)[0];
-        question2[1] = listOfAnswersFromEveryone.get(1)[1];
-        question3[1] = listOfAnswersFromEveryone.get(1)[2];
-
-        question1[2] = listOfAnswersFromEveryone.get(2)[0];
-        question2[2] = listOfAnswersFromEveryone.get(2)[1];
-        question3[2] = listOfAnswersFromEveryone.get(2)[2];
-
-        question1[3] = listOfAnswersFromEveryone.get(3)[0];
-        question2[3] = listOfAnswersFromEveryone.get(3)[1];
-        question3[3] = listOfAnswersFromEveryone.get(3)[2];
-
-        System.out.println(Arrays.toString(question1));
-        System.out.println(Arrays.toString(question2));
-        System.out.println(Arrays.toString(question3));
-
-        // calculate
-        double counter = 0;
-        for (String s : question1) {
-            if (s.equals("yes")) {
-                counter++;
-            }
+        for (int index = 0; index < listOfAnswersFromEveryone.size(); index++ ) {
+            question1[index] = listOfAnswersFromEveryone.get(index)[0];
+            question2[index] = listOfAnswersFromEveryone.get(index)[1];
+            question3[index] = listOfAnswersFromEveryone.get(index)[2];
         }
-        double total = (counter / 4) * 100;
-        System.out.println(total);
+
+        System.out.println("Survey Results:");
+        System.out.println("Do you play football?: " + (int) calculate(question1));
+        System.out.println("Do you swim?: " + (int) calculate(question2));
+        System.out.println("Do you watch movies?: " + (int) calculate(question3));
+
     }
 
     private static String[] surveyQuestions(int person) {
@@ -79,6 +59,16 @@ public class QuestionFourA {
         }
 
         return answers;
+    }
+
+    private static double calculate(String[] a) {
+        double counter = 0;
+        for (String s : a) {
+            if (s.equals("yes")) {
+                counter++;
+            }
+        }
+        return (counter / 4) * 100;
     }
 
 }
