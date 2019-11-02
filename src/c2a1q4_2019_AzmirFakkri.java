@@ -7,6 +7,7 @@ public class c2a1q4_2019_AzmirFakkri {
         // String arrayList to store answers from everyone (arrayList of arrays)
         ArrayList<String[]> listOfAnswersFromEveryone = new ArrayList<>();
 
+        // for loop to ask the questions to 4 persons
         for (int index = 1; index < 5; index++) {
             String[] persons = surveyQuestions(index);
             listOfAnswersFromEveryone.add(persons);
@@ -23,6 +24,7 @@ public class c2a1q4_2019_AzmirFakkri {
             question3[index] = listOfAnswersFromEveryone.get(index)[2];
         }
 
+        // print the survey results
         System.out.println("Survey Results:");
         System.out.println("Do you play football?: " + (int) calculate(question1));
         System.out.println("Do you swim?: " + (int) calculate(question2));
@@ -61,6 +63,7 @@ public class c2a1q4_2019_AzmirFakkri {
     }
 
     private static double calculate(String[] a) {
+        // calculate the percentage of yes answers
         double counter = 0;
         for (String s : a) {
             if (s.equals("yes")) {
