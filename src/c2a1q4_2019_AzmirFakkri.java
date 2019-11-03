@@ -18,6 +18,7 @@ public class c2a1q4_2019_AzmirFakkri {
         String[] question2 = new String[4];
         String[] question3 = new String[4];
 
+        // for loop to sort the answers from every person into 3 questions bucket
         for (int index = 0; index < listOfAnswersFromEveryone.size(); index++ ) {
             question1[index] = listOfAnswersFromEveryone.get(index)[0];
             question2[index] = listOfAnswersFromEveryone.get(index)[1];
