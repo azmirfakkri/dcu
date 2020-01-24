@@ -36,7 +36,7 @@ public class c2a2q2_2020_AzmirFakkri {
                 String reverseSentence = stringsListReversed.get(i);
                 writer.write(reverseSentence);
                 writer.write("\n");
-                System.out.println(reverseSentence);
+                // System.out.println(reverseSentence);
             }
             writer.close();
 
