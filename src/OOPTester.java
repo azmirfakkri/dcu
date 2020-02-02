@@ -2,6 +2,7 @@ public class OOPTester {
 
     public static void main(String[] args) {
 
+        // first statement
         WindInstrument x = new WindInstrument();
         System.out.println(x.family);
         System.out.println(x.mouthPiece);
@@ -9,6 +10,7 @@ public class OOPTester {
 
         System.out.println("-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*");
 
+        // second statement
         Flute y = new Flute();
         y.printFamily();
         y.printNumberOfReed();
@@ -16,8 +18,17 @@ public class OOPTester {
 
         System.out.println("-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*");
 
+        // third statement
+        x = y;
+
+        // fourth statement
+//        y = x;
+
+        // fifth statement
 //        y = new WindInstrument();
-//        x = new Flute();
+
+        // sixth statement
+        x = new Flute();
 
     }
 }
