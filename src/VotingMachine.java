@@ -29,7 +29,8 @@ public class VotingMachine {
     }
 
     // method to clear votes array
-    public static int[] clearVotes(int[] votes) {
-        return null;
+    public static void clearVotes(int[] votes) {
+        votes[0] = 0;
+        votes[1] = 0;
     }
 }

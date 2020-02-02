@@ -5,7 +5,7 @@ public class c2a2q1_2020_AzmirFakkri {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        char a;
+        char firstChar;
         String letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
         int totalChar;
 
@@ -21,19 +21,19 @@ public class c2a2q1_2020_AzmirFakkri {
                     System.out.print("Please enter a letter of the alphabet: ");
 
                     // get the first character
-                    a = sc.next().charAt(0);
+                    firstChar = sc.next().charAt(0);
 
                     // check if it is in letters
-                    if (letters.contains(Character.toString(a))) {
+                    if (letters.contains(Character.toString(firstChar))) {
 
                         // if True, save it into an array
-                        validChar[i] = a;
+                        validChar[i] = firstChar;
                     }
                     else {
                         System.out.println("Invalid entry.");
                     }
 
-                } while (!letters.contains(Character.toString(a)));
+                } while (!letters.contains(Character.toString(firstChar)));
             }
 
             System.out.println("You entered: " + Arrays.toString(validChar));

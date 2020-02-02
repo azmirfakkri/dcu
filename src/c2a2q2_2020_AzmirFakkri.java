@@ -12,15 +12,18 @@ public class c2a2q2_2020_AzmirFakkri {
         // arrayList to store the strings line by line
         ArrayList<String> stringsListReversed = new ArrayList<>();
 
+        // get the pathname and output name from cli
+        String pathName = args[0];
+        String outputName = args[1];
+
         // read the file
-        File file = new File("input.txt");
+        File file = new File(pathName);
 
         try {
             Scanner sc = new Scanner(file);
 
             while (sc.hasNextLine()) {
                 String sentence = sc.nextLine();
-                // System.out.println(sentence);
                 stringsListReversed.add(sentence);
             }
             sc.close();
@@ -30,13 +33,12 @@ public class c2a2q2_2020_AzmirFakkri {
         }
 
         try {
-            FileWriter writer = new FileWriter("output.txt");
+            FileWriter writer = new FileWriter(outputName);
             // reverse the string
             for (int i = stringsListReversed.size() - 1; i >= 0; i--) {
                 String reverseSentence = stringsListReversed.get(i);
                 writer.write(reverseSentence);
                 writer.write("\n");
-                // System.out.println(reverseSentence);
             }
             writer.close();
 
